@@ -1,28 +1,48 @@
 public class Tree<T> {
-    // TODO: Implement the unique field
+    private TreeNode<T> root;
+    
 
+    // No arg constructor
     public Tree() {
-        // TODO: Initialize the tree
+        this.root = null;
     }
 
+    // One arg constrcutor. Creates root.
     public Tree(TreeNode<T> root) {
-        // TODO: Initialize the tree with a root
+        this.root = root;
     }
 
     public void setRoot(TreeNode<T> root) {
-        // TODO: Set the root node
+        this.root = root;
     }
 
     public TreeNode<T> getRoot() {
-        // TODO: Return the root node
-        return null; // For compiling purposes only. TODO: Replace by adequate return
+       return root;
     }
 
     public List<T> breadthFirstSearch() {
-        // TODO: Implement BFS
-        // Don't forget to transform your collection R into a list at the end (if it is not already)
-        return null; // For compiling purposes only. TODO: Replace by adequate return
+
+        if (root == null) {
+            return new List<>(); // Empty Result
+        }
+
+        // Create collections C (front queue) and R (result)
+        Queue<TreeNode<T>> nodeQueue = new Queue<>();
+        List<T> result = new List<>();
+
+        nodeQueue.enqueue(root);
+
+        while (!nodeQueue.isEmpty()) {
+            TreeNode<T> current = nodeQueue.dequeue(); // The first pass will be root, then child
+            result.addAtEnd(current.getValue());
+
+            for (TreeNode<T> child : current.getChildren()) {
+                nodeQueue.enqueue(child);
+            }
+        }
+        return result;
     }
+    
 
     public List<T> depthFirstSearch() {
         // TODO: Implement DFS
