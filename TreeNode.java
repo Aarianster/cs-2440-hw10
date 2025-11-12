@@ -1,10 +1,11 @@
 public class TreeNode<T> {
-    // TODO: Implement the two fields
+
+    private T value;
+    private TreeNode<T> next;
 
     public TreeNode(T value) {
-        // TODO: Initialize the node
-        // The resulting node contains `value` as data
-        // and have an empty list of children.
+          this.value = value;
+          this.next = next;
     }
 
     public void addChild(TreeNode<T> child) {
