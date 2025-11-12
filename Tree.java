@@ -42,6 +42,9 @@ public class Tree<T> {
         }
         return result;
     }
+    // What data structures should you use for R and C? For each of them, describe what "remove" and "add" means.
+    // We would use a queue for the C collection and a normal list for R. Remove would queue the node into the back of the list. And remove would dequeue the front of the list. 
+
     
 
     public List<T> depthFirstSearch() {
