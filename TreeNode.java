@@ -1,26 +1,23 @@
 public class TreeNode<T> {
 
     private T value;
-    private TreeNode<T> next;
+    private List<TreeNode<T>> child;
 
     public TreeNode(T value) {
           this.value = value;
-          this.next = next;
+          this.child = new List<>(); // Creates leaf.
     }
 
     public void addChild(TreeNode<T> child) {
-        // TODO: Add a child to this node
-        // You can choose *where* to add the child
-        // but try to opt for the most time-efficient.
+        this.child.addAtEnd(child);
     }
 
+    
     public List<TreeNode<T>> getChildren() {
-        // TODO: Return the list of children
-        return null; // For compiling purposes only. TODO: Replace by adequate return
+        return child;
     }
 
     public T getValue() {
-        // TODO: Return the node's value
-        return null; // For compiling purposes only. TODO: Replace by adequate return
+        return value; 
     }
 }
